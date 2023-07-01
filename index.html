@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_Portfolio</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #DE0000;
+    border-radius: 5rem;
+}
+
+body {
+    background: #111;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heading span {
+    color: #DE0000;
+    font-size: 2rem;
+}
+
+.heading h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #DE0000;
+    border: 0.2rem solid #DE0000;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover {
+    background: #DE0000;
+    color: #111;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #222;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    color: #aaa;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover {
+    color: #DE0000;
+}
+
+.header .btn {
+    margin-top: 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.logo i {
+    color: #DE0000;
+    padding-right: .5rem;
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    margin: 0 auto;
+    margin-top: 9rem;
+    width: 90%;
+    border-radius: 1rem;
+    background: webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.7)), to(rgba(17, 17, 17, 0.7))), url(../images/home-bg.jpg) no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.3)), url(../images/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 80vh;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.home .content {
+    text-align: center;
+}
+
+.home .content span {
+    font-weight: bolder;
+    color: transparent;
+    -webkit-text-stroke: 0.1rem #fff;
+    font-size: 4vw;
+    display: block;
+}
+
+.home .content h3 {
+    font-size: 6vw;
+    color: #fff;
+}
+
+.home .content p {
+    max-width: 60rem;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+    color: #aaa;
+    line-height: 2;
+}
+
+.about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.about .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.about .content span {
+    color: #DE0000;
+    font-size: 2rem;
+}
+
+.about .content h3 {
+    color: #fff;
+    font-size: 4rem;
+    margin-top: .5rem;
+}
+
+.about .content p {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #aaa;
+    line-height: 2;
+}
+
+.blogs .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    border-radius: 1rem;
+    background: #222;
+    overflow: hidden;
+}
+
+.blogs .box-container .box:hover .image img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.blogs .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.blogs .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem;
+}
+
+.blogs .box-container .box .content .link {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.blogs .box-container .box .content .link:hover {
+    color: #DE0000;
+}
+
+.blogs .box-container .box .content p {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #aaa;
+    line-height: 2;
+}
+
+.blogs .box-container .box .content .icon {
+    padding-top: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.blogs .box-container .box .content .icon a {
+    font-size: 1.4rem;
+    color: #aaa;
+}
+
+.blogs .box-container .box .content .icon a:hover {
+    color: #DE0000;
+}
+
+.blogs .box-container .box .content .icon a i {
+    padding-right: .5rem;
+    color: #DE0000;
+}
+
+.banner {
+    background: webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.7)), to(rgba(17, 17, 17, 0.7))), url(../images/banner-bg.jpg) no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(../images/banner-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.banner .content span {
+    font-size: 2rem;
+    color: #DE0000;
+}
+
+.banner .content h3 {
+    font-size: 4rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.banner .content p {
+    max-width: 60rem;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+    color: #aaa;
+    line-height: 2;
+}
+
+.footer .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box {
+    padding: 1rem 0;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+    font-size: 1.4rem;
+    color: #aaa;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.footer .box-container .box p i {
+    padding-right: .5rem;
+    color: #DE0000;
+}
+
+.footer .box-container .box .share {
+    padding-top: 1rem;
+}
+
+.footer .box-container .box .share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    border: 0.2rem solid #DE0000;
+    color: #DE0000;
+    margin-right: .5rem;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+    background: #DE0000;
+    color: #111;
+}
+
+.footer .box-container .box .links {
+    font-size: 1.4rem;
+    color: #aaa;
+    padding: 1rem 0;
+    display: block;
+}
+
+.footer .box-container .box .links:hover {
+    color: #DE0000;
+}
+
+.footer .box-container .box .links:hover i {
+    padding-right: 2rem;
+}
+
+.footer .box-container .box .links i {
+    padding-right: .5rem;
+    color: #DE0000;
+}
+
+.credit {
+    background: #222;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    color: #aaa;
+}
+
+.credit span {
+    color: #DE0000;
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: #222;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a {
+        margin: 2rem;
+        font-size: 2rem;
+        display: block;
+    }
+
+    .home {
+        margin-top: 10rem;
+        background-position: right center;
+
+    }
+
+    .home .content span {
+        font-size: 8vw;
+    }
+
+    .home .content h3 {
+        font-size: 9vw;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .about .content h3 {
+        font-size: 3.5rem;
+    }
+
+    .banner .content h3 {
+        font-size: 2.7rem;
+    }
+}
+</style>
+<body>
+
+    <!-- header section starts  -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"><i>TheRangas21</i></a>
+        <nav class="navbar">
+            <a data-aos="zoom-in-left" data-aos-delay="300" href="#home">HOME</a>
+            <a data-aos="zoom-in-left" data-aos-delay="450" href="#about">ABOUT</a>
+            <a data-aos="zoom-in-left" data-aos-delay="600" href="#blogs">BLOGS</a>
+            <a data-aos="zoom-in-left" data-aos-delay="600" href="#contact">CONTACT</a>
+        </nav>
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <div class="content">
+            <span data-aos="fade-up" data-aos-delay="150">Hello! I'm</span>
+            <h3 data-aos="fade-up" data-aos-delay="300">TheRangas21</h3>
+            <p data-aos="fade-up" data-aos-delay="450">Nothing here...</p>
+            <a data-aos="fade-up" data-aos-delay="600" href="https://www.youtube.com/channel/UC0ySu3qAEVxpajftdl3QjuQ"
+                target="_blank" class="btn">subscribe</a>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+        <div class="content" data-aos="fade-left" data-aos-delay="600">
+            <span>About</span>
+            <h3>Nothing here...</h3>
+            <p>Nothing here...</p>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+    <!-- blogs section starts  -->
+    <section class="blogs" id="blogs">
+        <div class="heading">
+            <span>Blogs</span>
+            <h1>Nothing here...</h1>
+        </div>
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up" data-aos-delay="150">
+                <div class="image">
+                    <img src="images/blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">Organizational cooperation</a>
+                    <p>We worked hard to win the 1st runner up PUBG mobile award, my friends. I will always remember
+                        this.</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 8 aug, 2019</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                <div class="image">
+                    <img src="images/blog-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">The first debut with the grace of the master</a>
+                    <p>My teacher looked after me a lot and helped me a lot.I became a DJ thanks to him.</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 18 dec, 2019</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-up" data-aos-delay="450">
+                <div class="image">
+                    <img src="images/blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">A small school festival full of confidence</a>
+                    <p>I had the opportunity to participate in my University Water Festival with "Singapore Champion DJ
+                        The Kendrick" whom I really respect.</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i> 3 march, 2020</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- blogs section ends -->
+
+    <!-- banner section starts  -->
+    <div class="banner">
+        <div class="content" data-aos="zoom-in-up" data-aos-delay="300" id="contact">
+            <span>Contact</span>
+            <h3>Nothing here...</h3>
+            <p>Nothing here...</p>
+        </div>
+    </div>
+    <!-- banner section ends -->
+
+    <!-- footer section starts  -->
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up" data-aos-delay="150">
+                <h3> Social Media </h3>
+                <p>Nothing here...</p>
+                <div class="share">
+                    <a href="https://www.youtube.com/channel/UC0ySu3qAEVxpajftdl3QjuQ" target="_blank"
+                        class="fab fa-youtube"></a>
+                    <a href="https://instagram.com/therangas21?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"
+                        class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100079943828473&mibextid=LQQJ4d" target="_blank"
+                        class="fab fa-facebook-f"></a>
+                    <a href="https://soundcloud.com/htoo-aunk-linn-319003870?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                        target="_blank" class="fab fa-soundcloud"></a>
+                    <a href="https://github.com/therangas21" target="_blank" class="fab fa-github"></a>
+                </div>
+            </div>
+
+            <div class="box" data-aos="fade-up" data-aos-delay="450">
+                <h3>Contact Info</h3>
+                <p> <i class="fas fa-map"></i> Myanmar, Kayin-state, Myawaddy </p>
+                <p> <i class="fas fa-phone"></i> +959766458306 </p>
+                <p> <i class="fas fa-envelope"></i> htooaunklinn12@gmail.com </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="credit">created by <span>mr. htoo aunk linn</span> | &copy; all rights reserved!</div>
+    <!-- footer section ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        let navbar = document.querySelector('.header .navbar');
+
+        document.querySelector('#menu-btn').onclick = () => {
+            navbar.classList.toggle('active');
+        }
+        
+        window.onscroll = () => {
+            navbar.classList.remove('active');
+        }
+        
+        document.querySelectorAll('.about').forEach(btn => {
+            btn.onclick = () => {
+                let src = btn.getAttribute('data-src');
+                document.querySelector('.about').src = src;
+            }
+        })
+        
+        AOS.init({
+            duration: 80,
+            offset: 150,
+        });
+    </script>
+
+</body>
+
+</html>
